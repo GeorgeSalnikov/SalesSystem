@@ -1,0 +1,39 @@
+<mat-spinner *ngIf="!customer"></mat-spinner>
+<div style="padding: 0px;" *ngIf="customer">
+    <h1>{{customer.customerName}} orders</h1>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <dl>
+                <dt><b>Address:</b></dt>
+                <dd>{{customer.addressLine1}}</dd>
+                <dd>{{customer.addressLine2}}</dd>
+                <dd>{{customer.addressLine3}}</dd>
+                </dl>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content >
+            <table>
+                <tr>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Format</th>
+                    <th>Price</th>
+                    <th>Delete</th>
+                </tr>
+                <tr *ngFor="let order of customer.orders">
+                    <td>{{order.book.isbn}}</td>
+                    <td>{{order.book.title}}</td>
+                    <td>{{order.book.author}}</td>
+                    <td>{{order.book.bookFormat.format}}</td>
+                    <td>{{order.book.listPrice}}</td>
+                    <td><button (click)='deleteOrder(order.id)'>X</button></td>
+                </tr>
+            </table>
+        </mat-card-content>
+        <mat-card-actions>
+            <a class="nav-link" routerLink='/customers' routerLinkActive='active'>Back to all customers</a>
+        </mat-card-actions>
+    </mat-card>
+</div>

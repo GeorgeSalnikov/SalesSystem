@@ -1,0 +1,11 @@
+<h1>Customers</h1>
+<div style="padding: 0px;">
+   <mat-spinner *ngIf="customer"></mat-spinner>
+    <mat-card *ngFor="let cu of customers" style="margin-top:10px;">
+    
+        <mat-card-header>
+            <mat-card-title><a [routerLink]="['/customers', cu.id]" title="Tap to see the customers orders" class="btn btn-success btn-lg">{{cu.customerName}}</a></mat-card-title>
+        </mat-card-header>
+    
+    </mat-card>
+</div>
