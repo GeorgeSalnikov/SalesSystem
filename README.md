@@ -1,11 +1,11 @@
-#EventsSolution.sln
+#SalesSystem.sln
 Visual Studio 2019, Core .NET SDK 2.2
 
-#EventsSolution.Web
+#SalesSystem.Web
 http://localhost:55879
 
 
-# EventsolutionNG
+# SalesSystemNG
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
