@@ -10,6 +10,11 @@ import { ApiService } from '../api.service';
 export class CustomerOrdersComponent implements OnInit {
 
   	customer = null;
+	newOrderIsbn ="";
+	newOrderTitle ="";
+	newOrderAuthor ="";
+	newOrderFormat = "";
+	newOrderPrice = "";
     constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute) { }
 
 	ngOnInit() {
@@ -22,5 +27,17 @@ export class CustomerOrdersComponent implements OnInit {
 	deleteOrder(id: any) {
 		this.apiService.deleteOrder(id);
 		return true;
+	}
+	addOrder(id: any) {
+		//this.apiService.deleteOrder(id);
+		this.getNewOrder();
+	}
+
+	getNewOrder() {
+		this.newOrderIsbn ="";
+		this.newOrderTitle ="";
+		this.newOrderAuthor ="";
+		this.newOrderFormat = "";
+		this.newOrderPrice = "";
 	}
 }
