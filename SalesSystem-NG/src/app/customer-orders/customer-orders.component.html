@@ -20,7 +20,15 @@
                     <th>Author</th>
                     <th>Format</th>
                     <th>Price</th>
-                    <th>Delete</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td><input class="form-control" type="text" id="newISBN" name="newISBN" [(ngModel)]="newOrderIsbn" required pattern="\\d{8,8}" /></td>
+                    <td><input class="form-control" type="text" id="newTitle" name="newTitle" [(ngModel)]="newOrderTitle" required /></td>
+                    <td><input class="form-control" type="text" id="newAuthor" name="newAuthor" [(ngModel)]="newOrderAuthor" required /></td>
+                    <td><input class="form-control" type="text" id="newFormat" name="newFormat" [(ngModel)]="newOrderFormat" required pattern="digitalaudio|hardcore" /></td>
+                    <td><input class="form-control" type="text" id="newPrice" name="newPrice" [(ngModel)]="newOrderPrice" required pattern="\\d{8,8}" /></td>
+                    <td><button title="Add the order" (click)='addOrder(order.id)'>+</button></td>
                 </tr>
                 <tr *ngFor="let order of customer.orders">
                     <td>{{order.book.isbn}}</td>
@@ -28,7 +36,7 @@
                     <td>{{order.book.author}}</td>
                     <td>{{order.book.bookFormat.format}}</td>
                     <td>{{order.book.listPrice}}</td>
-                    <td><button (click)='deleteOrder(order.id)'>X</button></td>
+                    <td><button title="Delete the order" (click)='deleteOrder(order.id)'>X</button></td>
                 </tr>
             </table>
         </mat-card-content>
