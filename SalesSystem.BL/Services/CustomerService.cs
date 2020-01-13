@@ -15,7 +15,7 @@ namespace SalesSystem.BL
         public IEnumerable<Customer> Customers()
             => _context.Customers;//.Select(ev => new Event { Id = ev.Id, Title = ev.Title, Description = ev.Description, Date = ev.Date, Type = new EventType { Id = ev.Type.Id, Title = ev.Type.Title, } });
 
-        public IEnumerable<Customer> FindCustomer(string searchCriteria)
+        public IEnumerable<Customer> SearchCustomer(string searchCriteria)
             => _context.Customers
             .Where(cu => cu.CustomerName.Contains(searchCriteria) || cu.Id.ToString().Contains(searchCriteria))
             .Include(c => c.Orders)

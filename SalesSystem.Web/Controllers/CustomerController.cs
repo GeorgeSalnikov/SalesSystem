@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SalesSystem.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Customer")]
     [ApiController]
     public class CustomerController : ControllerBase
     {
@@ -18,6 +18,11 @@ namespace SalesSystem.Web.Controllers
         [HttpGet]
         public IEnumerable<Customer> Get()
             => _service.Customers();
+
+        // GET: api/Customer/Search/Amazon
+        [HttpGet("Search/{searchCriteria}", Name = "SearchCustomer")]
+        public IEnumerable<Customer> SearchCustomer(string searchCriteria)
+            => _service.SearchCustomer(searchCriteria);
 
         [HttpGet("{id}", Name = "Get")]
         public Customer Get([FromRoute] int id)

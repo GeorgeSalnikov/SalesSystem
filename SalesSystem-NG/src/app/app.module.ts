@@ -23,8 +23,6 @@ import { MatToolbarModule,
     //AboutComponent,
     CustomersComponent,
     CustomerOrdersComponent
-    //EventsComponent,
-    //EventDetailsComponent
   ],
   imports: [
     BrowserModule,
