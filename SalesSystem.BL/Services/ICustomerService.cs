@@ -9,6 +9,6 @@ namespace SalesSystem.BL
     {
         IEnumerable<Customer> Customers();
         Customer GetCustomer(int id);
-        IEnumerable<Customer> FindCustomer(string searchCriteria);
+        IEnumerable<Customer> SearchCustomer(string searchCriteria);
     }
 }

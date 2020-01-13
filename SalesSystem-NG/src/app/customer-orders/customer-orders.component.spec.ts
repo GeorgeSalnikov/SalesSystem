@@ -15,6 +15,7 @@ export class CustomerOrdersComponent implements OnInit {
 	newOrderAuthor ="";
 	newOrderFormat = "";
 	newOrderPrice = "";
+	newOrderQty = "";
     constructor(private apiService: ApiService, private activatedRoute: ActivatedRoute) { }
 
 	ngOnInit() {
@@ -39,5 +40,6 @@ export class CustomerOrdersComponent implements OnInit {
 		this.newOrderAuthor ="";
 		this.newOrderFormat = "";
 		this.newOrderPrice = "";
+		this.newOrderQty = "";
 	}
 }

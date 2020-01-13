@@ -14,7 +14,7 @@ namespace SalesSystem.BL
         public IEnumerable<Book> Books()
             => _context.Books;
 
-        public IEnumerable<Book> FindBook(string searchCriteria)
+        public IEnumerable<Book> SearchBook(string searchCriteria)
             => _context.Books.Where(b => b.Title.Contains(searchCriteria) || b.Author.Contains(searchCriteria) || b.ISBN.Contains(searchCriteria));
 
         public Book GetBook(int id)

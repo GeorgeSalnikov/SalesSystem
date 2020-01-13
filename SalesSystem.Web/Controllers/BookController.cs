@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SalesSystem.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Book")]
     [ApiController]
     public class BookController : ControllerBase
     {
@@ -23,9 +23,11 @@ namespace SalesSystem.Web.Controllers
         public IEnumerable<Book> Get()
             => _service.Books();
 
-        // GET: api/Book/Girl
-        [HttpGet("{searchCriteria}", Name = "FindBook")]
-        public IEnumerable<Book> FindBook([FromRoute] string searchCriteria)
-            => _service.FindBook(searchCriteria);
+
+        // GET: api/Book/Search/Girl
+        [HttpGet("Search/{searchCriteria}", Name = "SearchBook")]
+        public IEnumerable<Book> SearchBook(string searchCriteria)
+            => _service.SearchBook(searchCriteria);
+
     }
 }

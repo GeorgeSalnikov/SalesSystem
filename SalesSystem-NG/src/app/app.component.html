@@ -1,6 +1,15 @@
 <!-- Events Solution toolbar -->
 <mat-toolbar color="primary">  
-  <button mat-button routerLink="/">Search</button>  
-  <button mat-button routerLink="/about">About</button>
-  </mat-toolbar>
- <router-outlet></router-outlet>
+  <button mat-button routerLink="/customers">Home</button>
+  <button mat-button>Search</button>
+  <!--
+  <button mat-button (click)="openDialog()">Search</button>
+  <button mat-button [matMenuTriggerFor]="menuSearch">Search</button>
+    <mat-menu #menu="menuSearch">
+    <button mat-menu-item>Search Customer</button>
+    <button mat-menu-item>Search Order</button>
+    <button mat-menu-item>Search Book</button>
+  </mat-menu> 
+--> 
+</mat-toolbar>
+<router-outlet></router-outlet>

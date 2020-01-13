@@ -20,6 +20,7 @@
                     <th>Author</th>
                     <th>Format</th>
                     <th>Price</th>
+                    <th>Quantity</th>
                     <th>Action</th>
                 </tr>
                 <tr>
@@ -28,6 +29,7 @@
                     <td><input class="form-control" type="text" id="newAuthor" name="newAuthor" [(ngModel)]="newOrderAuthor" required /></td>
                     <td><input class="form-control" type="text" id="newFormat" name="newFormat" [(ngModel)]="newOrderFormat" required pattern="digitalaudio|hardcore" /></td>
                     <td><input class="form-control" type="text" id="newPrice" name="newPrice" [(ngModel)]="newOrderPrice" required pattern="\\d{8,8}" /></td>
+                    <td><input class="form-control" type="text" id="newQty" name="newQty" [(ngModel)]="newOrderQty" required pattern="\\d{8,8}" /></td>
                     <td><button title="Add the order" (click)='addOrder(order.id)'>+</button></td>
                 </tr>
                 <tr *ngFor="let order of customer.orders">
@@ -36,12 +38,14 @@
                     <td>{{order.book.author}}</td>
                     <td>{{order.book.bookFormat.format}}</td>
                     <td>{{order.book.listPrice}}</td>
+                    <td>{{order.qty}}</td>
                     <td><button title="Delete the order" (click)='deleteOrder(order.id)'>X</button></td>
                 </tr>
             </table>
         </mat-card-content>
-        <mat-card-actions>
+<!--        <mat-card-actions>
             <a class="nav-link" routerLink='/customers' routerLinkActive='active'>Back to all customers</a>
         </mat-card-actions>
+        -->
     </mat-card>
 </div>
