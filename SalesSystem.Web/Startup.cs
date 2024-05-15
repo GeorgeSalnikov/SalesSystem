@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace SalesSystem
 {
@@ -24,8 +24,8 @@ namespace SalesSystem
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options => options.AddPolicy(SalesSystemNGOrigin, builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod()));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            services.AddControllersWithViews().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); 
+            services.AddMvc(); //.SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            services.AddControllersWithViews(); //.AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); 
             services.AddRazorPages();
             services.AddDbContext<SalesSystemDbContext>(op => op.UseInMemoryDatabase(SalesSystemDbContext.DatabaseName));
             services.AddScoped<IBookService, BookService>();
